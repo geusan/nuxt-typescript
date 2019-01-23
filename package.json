@@ -1,0 +1,38 @@
+{
+  "name": "003_typescript_nuxt",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": "geusan lim <dnay2k@taggers.io>",
+  "private": true,
+  "scripts": {
+    "init": "tsc --init && tslint --init",
+    "dev": "nuxt --port 8000",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "nuxt": "^2.0.0",
+    "vue": "^2.5.22",
+    "vue-property-decorator": "^7.3.0",
+    "vuex-class": "^0.3.1"
+  },
+  "devDependencies": {
+    "nuxt-ts": "^0.3.0",
+    "@types/node": "^10.12.18",
+    "@types/vue": "^2.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^4.19.1",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-vue": "^4.0.0",
+    "nuxt-typescript": "^0.11.0",
+    "ts-loader": "^5.3.3",
+    "tslint": "^5.12.1",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.2.4"
+  }
+}
