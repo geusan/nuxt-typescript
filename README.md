@@ -1,6 +1,13 @@
-# 003_typescript_nuxt
+# Nuxt Typescript
 
-> Nuxt.js project
+> Based on nuxt-community/typescript-template
+
+references
+[nuxt-community typescript-template](https://github.com/nuxt-community/typescript-template)
+[nuxtjs example typescript](https://github.com/nuxt/nuxt.js/tree/dev/examples/typescript)
+[nuxtjs example typescript-vuex](https://github.com/nuxt/nuxt.js/tree/dev/examples/typescript-vuex)
+
+
 
 ## Build Setup
 
