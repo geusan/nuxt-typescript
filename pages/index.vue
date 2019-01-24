@@ -21,8 +21,8 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import Sample from '~/models/Sample'
-import Card from '~/components/Card.vue'
-import AppLogo from '~/components/AppLogo.vue'
+import Card from '~/components/Card'
+import AppLogo from '~/components/AppLogo'
 
 @Component({
   components: { Card, AppLogo }
