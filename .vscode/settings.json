@@ -1,3 +1,10 @@
 {
-  "eslint.autoFixOnSave": true,
+  "editor.tabSize": 2,
+  "tslint.configFile": "./tslint.json",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.formatOnPaste": true,
+  "autoimport.useSemiColon": false,
+  "autoimport.doubleQuotes": false,
+  "autoimport.filesToScan": "**/*.{ts,tsx,vue}",
+  "autoimport.autoComplete": true
 }

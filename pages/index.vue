@@ -20,9 +20,13 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import Sample from './../models/Sample'
+import Sample from '~/models/Sample'
+import Card from '~/components/Card.vue'
+import AppLogo from '~/components/AppLogo.vue'
 
-@Component
+@Component({
+  components: { Card, AppLogo }
+})
 export default class App extends Vue {
   
   private samples: Sample[] = []
