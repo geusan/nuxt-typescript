@@ -7,11 +7,11 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: 'Nuxt.js project' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    ],
   },
   /*
   ** Customize the progress bar color
@@ -31,13 +31,13 @@ module.exports = {
     extend (config, { isServer }) {
       const tsLoader = {
         loader: 'ts-loader',
-        options: { 
-          appendTsSuffixTo: [/\.vue$/], 
-          transpileOnly: true 
+        options: {
+          appendTsSuffixTo: [/\.vue$/],
+          transpileOnly: true,
         },
         exclude: [
           /vendor/,
-          /\.nuxt/
+          /\.nuxt/,
         ],
       }
       config.module.rules.push({ test: /((client|server)\.js)|(\.tsx?)$/, ...tsLoader })
@@ -58,7 +58,6 @@ module.exports = {
         config.resolve.extensions.push('.tsx')
       }
       if (isServer) { config.externals = [] }
-    }
-  }
+    },
+  },
 }
-

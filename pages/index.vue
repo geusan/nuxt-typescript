@@ -1,54 +1,61 @@
 <template>
   <section class="container">
     <div>
-      <ul>
-        <li v-for="(s, idx) in samples" :key="`li-${idx}`">
-          {{ s.name }} - {{ s.age }}
-        </li>
-      </ul>
-      <div>
-        <span>{{ countedString }}</span>
-        <button @click="add">add</button>
-        <button @click="subtract">subtract</button>
-      </div>
-      <div>
-        <button @click="greet">greet</button>
-      </div>
+      <h2>welcome</h2>
+
+      <h4>Say Hello to someone</h4>
+
+      <card v-for="(person, idx) in people" 
+            :key="`card-${idx}`"
+            :style="{ backgroundColor: person.id === selected ? 'rgba(100, 100, 100, .3)' : 'transparent'}"
+            :person="person">
+      </card>
+
+      {{selectedPersonName}}
+
     </div>
   </section>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import Sample from '~/models/Sample'
-import Card from '~/components/Card'
-import AppLogo from '~/components/AppLogo'
+import Card from '~/components/Card.vue'
+import { namespace } from 'vuex-class'
+
+import * as people from '~/store/people'
+
+const People = namespace(people.name)
 
 @Component({
-  components: { Card, AppLogo }
+  components: {
+    Card
+  },
 })
 export default class App extends Vue {
-  
-  private samples: Sample[] = []
+  @People.State
+  selected
+  @People.State
+  people
+  @People.Getter
+  selectedPerson
+
   private msg: string = 'Hello world'
   private count: number = 0
 
-  created(): void {
-    this.msg = 'Hello world'
+  async fetch(): Promise<any> {
+    console.log('fetch!!')
   }
 
   mounted(): void {
-    this.samples.push(new Sample({ name: 'samuel', age: 19 }))
-    this.samples.push(new Sample({ name: 'kimchi', age: 34 }))
-    this.samples.push(new Sample({ name: 'jake', age: 27 }))
-    this.samples.push(new Sample({ name: 'jason', age: 12 }))
-    this.samples.push(new Sample({ name: 'ilbangbang', age: 19 })) 
-    console.log('Hi')
+    console.log('Hi', People)
   }
 
   // computed
+  get selectedPersonName() {
+    return `Hi ${this.selectedPerson.first_name} ${this.selectedPerson.last_name}`
+  }
   get countedString() {
-    return `computed ${this.count}`
+    return `selected person is ${this.count}`
   }
 
   // method
@@ -57,11 +64,14 @@ export default class App extends Vue {
   }
 
   add() {
-    this.count++
+
+
+
+    this.count += 1
   }
 
   subtract() {
-    this.count--
+    this.count -= 1
   }
 }
 </script>

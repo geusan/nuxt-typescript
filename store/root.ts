@@ -3,7 +3,7 @@ import { RootState } from 'store'
 
 export const types = {}
 
-export interface State {}
+export interface State { }
 
 export const state = (): State => ({})
 
@@ -15,8 +15,8 @@ export interface Actions<S, R> extends ActionTree<S, R> {
 
 export const actions: Actions<State, RootState> = {
   async nuxtServerInit() {
-    // nuxt server init method
-  }
+    // nuxt init methods
+  },
 }
 
 export const mutations: MutationTree<State> = {}
