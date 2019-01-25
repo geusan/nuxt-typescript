@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import Card from '~/components/Card.vue'
+import Card from '~/components/Card'
 import { namespace } from 'vuex-class'
 
 import * as people from '~/store/people'
@@ -28,10 +28,22 @@ const People = namespace(people.name)
 
 @Component({
   components: {
-    Card
+    Card,
+  },
+  // fetch
+  async fetch() {
+    console.log('fetch')
+  },
+  // asyncData
+  async asyncData() {
+    console.log('asyncData')
+    return {
+      newData: 'new Data from async Data!',
+    }
   },
 })
 export default class App extends Vue {
+  // store binding
   @People.State
   selected
   @People.State
@@ -39,15 +51,39 @@ export default class App extends Vue {
   @People.Getter
   selectedPerson
 
+  // data
   private msg: string = 'Hello world'
   private count: number = 0
+  private newData: string = ''
 
-  async fetch(): Promise<any> {
-    console.log('fetch!!')
+  // created
+  created(): void {
+    console.log('created', `(newData: ${this.newData})`)
   }
 
+  // beforeMount
+  beforeMount(): void {
+    console.log('beforeMount', `(newData: ${this.newData})`)
+  }
+
+  // mounted
   mounted(): void {
-    console.log('Hi', People)
+    console.log('mounted', `(newData: ${this.newData})`)
+  }
+
+  // updated
+  updated(): void {
+    console.log('updated', `(newData: ${this.newData})`)
+  }
+
+  // beforeDestroy
+  beforeDestroy(): void {
+    console.log('beforeDestroy', `(newData: ${this.newData})`)
+  }
+
+  // destroyed
+  destroyed(): void {
+    console.log('destroyed', `(newData: ${this.newData})`)
   }
 
   // computed
@@ -64,9 +100,6 @@ export default class App extends Vue {
   }
 
   add() {
-
-
-
     this.count += 1
   }
 

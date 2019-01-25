@@ -15,7 +15,9 @@ const People = namespace(people.name)
 
 @Component
 export default class Card extends Vue {
+  // props
   @Prop() person
+  // store binding
   @People.Action select
 }
 </script>
