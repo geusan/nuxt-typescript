@@ -3,6 +3,7 @@
 > Based on nuxt-community/typescript-template <br/>아쉬운 점은 ide에서 linting이 불가하다.
 
 
+> linting 할 방법 찾음 pages/vue-without-template.ts 를 보면, 확장자를 .ts로 바꾸고, Vue.render 함수를 사용하면 된다. 어려운 코드가 되겠지만, 익숙해지면 편해지지 않을까?
 ***
 
 references
