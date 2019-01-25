@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <div>
-      <h2>welcome to Typescript SFC</h2>
+      <h2>welcome to Javascript SFC</h2>
 
       <h4>Say Hello to someone</h4>
 
@@ -22,104 +22,90 @@
       <div>
         <button @click="greet(selectedPersonName)">greet</button>
       </div>
-      <div>
-        <nuxt-link to="/vue-without-template">go to Typescript without template</nuxt-link>
-      </div>
-      <div>
-        <nuxt-link to="/javascript-sfc">go to Javascript SFC</nuxt-link>
-      </div>
+      <nuxt-link to="/">go to home</nuxt-link>
     </div>
   </section>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+<script>
 import Card from '~/components/Card'
-import { namespace } from 'vuex-class'
+import { mapState, mapGetters } from 'vuex'
 
-import * as people from '~/store/people'
-
-const People = namespace(people.name)
-
-@Component({
+export default {
   components: {
     Card,
   },
-  // fetch
   async fetch() {
     console.log('fetch')
   },
-  // asyncData
   async asyncData() {
     console.log('asyncData')
     return {
-      newData: 'new Data from async Data!',
+      newData: 'new Data from asyncData',
     }
   },
-})
-export default class App extends Vue {
-  // store binding
-  @People.State
-  selected
-  @People.State
-  people
-  @People.Getter
-  selectedPerson
-
-  // data
-  private count: number = 0
-  private newData: string = ''
-
+  data: () => ({
+    count: 0,
+    msg: 'hello world!',
+  }),
   // created
-  created(): void {
+  created() {
     console.log('created', `(newData: ${this.newData})`)
-  }
+  },
 
   // beforeMount
-  beforeMount(): void {
+  beforeMount() {
     console.log('beforeMount', `(newData: ${this.newData})`)
-  }
+  },
 
   // mounted
-  mounted(): void {
+  mounted() {
     console.log('mounted', `(newData: ${this.newData})`)
-  }
+  },
 
   // updated
-  updated(): void {
+  updated() {
     console.log('updated', `(updated person: ${this.selectedPersonName})`)
-  }
+  },
 
   // beforeDestroy
-  beforeDestroy(): void {
+  beforeDestroy() {
     console.log('beforeDestroy', `(newData: ${this.newData})`)
-  }
+  },
 
   // destroyed
-  destroyed(): void {
+  destroyed() {
     console.log('destroyed', `(newData: ${this.newData})`)
-  }
+  },
 
   // computed
-  get selectedPersonName() {
-    return `Hi ${this.selectedPerson.first_name} ${this.selectedPerson.last_name}`
-  }
-  get countedString() {
-    return `selected person is ${this.count}`
-  }
-
+  computed: {
+    ...mapState({
+      people: state => state.people.people,
+      selected: state => state.people.selected,
+    }),
+    ...mapGetters({
+      selectedPerson: 'people/selectedPerson',
+    }),
+    selectedPersonName() {
+      return `Hi ${this.selectedPerson.first_name} ${this.selectedPerson.last_name}`
+    },
+    countedString() {
+      return `counted string is ${this.count}`
+    },
+  },
   // method
-  greet(msg: string): void {
-    alert(`greeting: ${msg}`)
-  }
-
-  add() {
-    this.count += 1
-  }
-
-  subtract() {
-    this.count -= 1
-  }
+  methods: {
+    greet(msg) {
+      alert(`greeting: ${msg}`)
+    },
+    add() {
+      this.count += 1
+    },
+    subtract() {
+      this.count -= 1
+    },
+  },
 }
 </script>
 
