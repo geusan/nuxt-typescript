@@ -4,13 +4,24 @@
 
 references
 
-- [nuxt-community typescript-template](https://github.com/nuxt-community/typescript-template)
+- [nuxt-community/typescript-template](https://github.com/nuxt-community/typescript-template)
 
-- [nuxtjs example typescript](https://github.com/nuxt/nuxt.js/tree/dev/examples/typescript)
+- [nuxtjs/examples/typescript](https://github.com/nuxt/nuxt.js/tree/dev/examples/typescript)
 
-- [nuxtjs example typescript-vuex](https://github.com/nuxt/nuxt.js/tree/dev/examples/typescript-vuex)
+- [nuxtjs/examples/typescript-vuex](https://github.com/nuxt/nuxt.js/tree/dev/examples/typescript-vuex)
 
 
+library
+
+
+- [vue-class-component](https://github.com/vuejs/vue-class-component)
+
+- [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator)
+
+- [vuex-class](https://github.com/ktsn/vuex-class)
+
+- [nuxt-ts-edge(Nuxt with runtime typescript support)](https://www.npmjs.com/package/nuxt-ts-edge)
+=======
 
 ## Build Setup
 

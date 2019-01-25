@@ -5,14 +5,10 @@
   "author": "geusan lim <dnay2k@taggers.io>",
   "private": true,
   "scripts": {
-    "init": "tsc --init && tslint --init",
-    "tsc": "tsc -p ./tsconfig.json",
-    "dev": "nuxt-ts . --port 8000",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "start": "nuxt-ts start",
+    "generate": "nuxt-ts generate"
   },
   "dependencies": {
     "axios": "^0.18.0",
