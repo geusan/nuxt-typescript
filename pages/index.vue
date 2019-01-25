@@ -5,11 +5,13 @@
 
       <h4>Say Hello to someone</h4>
 
-      <card v-for="(person, idx) in people" 
-            :key="`card-${idx}`"
-            :style="{ backgroundColor: person.id === selected ? 'rgba(100, 100, 100, .3)' : 'transparent'}"
-            :person="person">
-      </card>
+      <section class="mx-4">
+        <card v-for="(person, idx) in people" 
+              :key="`card-${idx}`"
+              :style="{ backgroundColor: person.id === selected ? 'rgba(100, 100, 100, .3)' : 'transparent'}"
+              :person="person">
+        </card>
+      </section>
 
       {{selectedPersonName}}
 
@@ -73,7 +75,7 @@ export default class App extends Vue {
 
   // updated
   updated(): void {
-    console.log('updated', `(newData: ${this.newData})`)
+    console.log('updated', `(updated person: ${this.selectedPersonName})`)
   }
 
   // beforeDestroy
@@ -137,6 +139,10 @@ export default class App extends Vue {
 
 .links {
   padding-top: 15px;
+}
+
+.mx-4 {
+  margin: 2em 0;
 }
 </style>
 

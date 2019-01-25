@@ -44,23 +44,23 @@ export const state = (): State => ({
   people: [
     {
       id: 1,
-      first_name: 'Iron',
-      last_name: 'man',
+      first_name: 'geusan',
+      last_name: 'lim',
     },
     {
       id: 2,
-      first_name: 'Beam',
-      last_name: 'jim',
+      first_name: 'steve',
+      last_name: 'jobs',
     },
     {
       id: 3,
-      first_name: 'Vodka',
-      last_name: 'tequila',
+      first_name: 'bill',
+      last_name: 'gates',
     },
     {
       id: 4,
-      first_name: 'Pink',
-      last_name: 'panda',
+      first_name: 'zeff',
+      last_name: 'bezos',
     },
   ],
 })
