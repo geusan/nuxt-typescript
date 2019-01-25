@@ -1,6 +1,9 @@
 # Nuxt Typescript
 
-> Based on nuxt-community/typescript-template
+> Based on nuxt-community/typescript-template <br/>아쉬운 점은 ide에서 linting이 불가하다.
+
+
+***
 
 references
 
@@ -21,7 +24,9 @@ library
 - [vuex-class](https://github.com/ktsn/vuex-class)
 
 - [nuxt-ts-edge(Nuxt with runtime typescript support)](https://www.npmjs.com/package/nuxt-ts-edge)
-=======
+
+
+***
 
 ## Build Setup
 
