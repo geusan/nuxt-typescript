@@ -11,7 +11,7 @@
     "generate": "nuxt-ts generate"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "nuxt": "^2.0.0",
     "nuxt-ts-edge": "^2.4.0-25804808.c39cf841",
     "vue": "^2.5.22",
